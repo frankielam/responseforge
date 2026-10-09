@@ -1,0 +1,8 @@
+# Copy to .dev.vars for `wrangler dev`. Do not commit real keys.
+
+INGEST_TOKEN=
+LLM_BASE_URL=
+LLM_API_KEY=
+LLM_MODEL=
+LLM_TIMEOUT_SECONDS=120
+LLM_MAX_SAMPLE_CHARS=12000

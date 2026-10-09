@@ -1,0 +1,20 @@
+@echo off
+rem Copy this file to start.bat, fill in LLM_API_KEY, then double-click start.bat.
+rem On Windows ARM, change the last line to responseforge-windows-arm64.exe.
+
+set ADDR=:8080
+set STORAGE=csv
+set DATA_DIR=./private/data
+set INGEST_TOKEN=
+set MAX_BODY_BYTES=2097152
+
+set LLM_BASE_URL=https://api.deepseek.com/v1
+set LLM_API_KEY=sk-your-key
+set LLM_MODEL=deepseek-chat
+set LLM_TIMEOUT_SECONDS=90
+set LLM_MAX_SAMPLE_CHARS=12000
+
+rem Set DEBUG=1 to print LLM request and response bodies.
+set DEBUG=
+
+responseforge-windows-amd64.exe

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="manifest.open_in_tab" content="true" />
+    <title>ResponseForge settings</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="title-row">
+          <h1 data-i18n="title"></h1>
+          <button id="lang" type="button"></button>
+        </div>
+        <p class="note" data-i18n-html="intro"></p>
+      </header>
+      <form id="form">
+        <section class="card">
+          <label class="check"><input id="enabled" type="checkbox" /> <span data-i18n="enabled"></span></label>
+        </section>
+
+        <details id="serverDetails" class="card">
+          <summary>
+            <span class="summary-title" data-i18n="server"></span>
+            <span id="serverSummary" class="summary-url"></span>
+          </summary>
+          <div class="details-body">
+            <label><span data-i18n="serverUrl"></span> <input id="serverUrl" type="url" required /></label>
+            <p id="remote" class="warn" data-i18n="remote" hidden></p>
+            <label><span data-i18n="token"></span> <input id="token" type="password" autocomplete="off" /></label>
+            <label class="check"><input id="captureErrors" type="checkbox" /> <span data-i18n="captureErrors"></span></label>
+            <label class="check"><input id="includeHeaders" type="checkbox" /> <span data-i18n="includeHeaders"></span></label>
+            <label><span data-i18n="bodyLimit"></span> <input id="maxBody" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" /></label>
+            <div class="presets">
+              <button type="button" data-bytes="65536">64K</button>
+              <button type="button" data-bytes="131072">128K</button>
+              <button type="button" data-bytes="262144">256K</button>
+              <button type="button" data-bytes="524288">512K</button>
+              <button type="button" data-bytes="1048576">1MB</button>
+              <button type="button" data-bytes="2097152">2MB</button>
+              <button type="button" data-bytes="4194304">4MB</button>
+              <button type="button" data-bytes="8388608">8MB</button>
+              <button type="button" data-bytes="10485760">10MB</button>
+            </div>
+          </div>
+        </details>
+
+        <section class="card">
+          <div class="section-head">
+            <h2 data-i18n="patterns"></h2>
+            <div class="row-actions">
+              <button id="exportPatterns" type="button" data-i18n="exportJson"></button>
+              <button id="importPatterns" type="button" data-i18n="importJson"></button>
+              <input id="importFile" type="file" accept="application/json,.json" hidden />
+            </div>
+          </div>
+          <p class="note" data-i18n-html="patternNote"></p>
+          <div id="patterns"></div>
+          <p id="emptyPatterns" class="note" data-i18n="emptyPatterns"></p>
+          <div class="add">
+            <select id="newMode" aria-label="Pattern mode">
+              <option value="include"></option>
+              <option value="exclude"></option>
+            </select>
+            <input id="newPattern" type="text" />
+            <button id="add" type="button" data-i18n="add"></button>
+          </div>
+          <p id="conflict" class="warn" hidden></p>
+          <div class="save-row">
+            <button type="submit" data-i18n="save"></button>
+            <p id="saved" role="status"></p>
+          </div>
+        </section>
+      </form>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+name = "responseforge"
+main = "src/index.ts"
+compatibility_date = "2026-10-04"
+
+# Create the database once, then replace database_id:
+#   npx wrangler d1 create responseforge
+[[d1_databases]]
+binding = "DB"
+database_name = "responseforge-prod"
+database_id = "5b321d22-e559-4c31-833d-2e9a7d2e25ee"
+
+# Secrets (same names as the Go server):
+#   npx wrangler secret put INGEST_TOKEN
+#   npx wrangler secret put LLM_API_KEY
+#   npx wrangler secret put LLM_BASE_URL
+#   npx wrangler secret put LLM_MODEL
+# Leave LLM_BASE_URL unset to disable the LLM.
+# Local values go in .dev.vars (see .dev.vars.example). Do not commit secrets.

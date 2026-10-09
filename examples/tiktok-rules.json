@@ -1,0 +1,27 @@
+[
+  {
+    "pattern": "https://partner.example/affiliate/creators*",
+    "content_types": ["application/json"],
+    "record_path": "$.data.creators[*]",
+    "table": "tiktok_creators",
+    "fields": [
+      {"name": "creator_id", "type": "string", "from": "$.creator_id", "required": true},
+      {"name": "nickname", "type": "string", "from": "$.nickname"},
+      {"name": "region", "type": "string", "from": "$.region"},
+      {"name": "follower_count", "type": "number", "from": "$.follower_count"},
+      {"name": "categories", "type": "string", "from": "$.categories"}
+    ]
+  },
+  {
+    "pattern": "https://partner.example/affiliate/merchants*",
+    "content_types": ["application/json"],
+    "record_path": "$.data.merchants[*]",
+    "table": "tiktok_merchants",
+    "fields": [
+      {"name": "merchant_id", "type": "string", "from": "$.merchant_id", "required": true},
+      {"name": "shop_name", "type": "string", "from": "$.shop_name"},
+      {"name": "region", "type": "string", "from": "$.region"},
+      {"name": "categories", "type": "string", "from": "$.categories"}
+    ]
+  }
+]
